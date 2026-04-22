@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viminza | Estudio Jurídico</title>
+    
+    <meta name="description" content="Viminza Estudio Jurídico - Asesoramiento legal profesional en Buenos Aires.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-crema: #F2EFE9; /* El fondo exacto de tu logo */
+            --brand-dorado: #A69166; /* El tono dorado de las letras */
+            --brand-gris: #3D3D3D;   /* El tono oscuro del isotipo */
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--brand-crema);
+            color: var(--brand-gris);
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Hero Section Refinada */
+        .hero {
+            background: linear-gradient(rgba(242, 239, 233, 0.85), rgba(242, 239, 233, 0.85)), 
+                        url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .logo-main {
+            max-width: 350px;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
+        }
+
+        /* Tarjetas de Servicios */
+        .service-card {
+            background: white;
+            border: 1px solid rgba(166, 145, 102, 0.2);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            border-color: var(--brand-dorado);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(166, 145, 102, 0.1);
+        }
+
+        .gold-line {
+            width: 50px;
+            height: 1px;
+            background-color: var(--brand-dorado);
+            margin: 1.5rem auto;
+        }
+
+        /* Botones Estilizados */
+        .btn-brand {
+            background-color: var(--brand-gris);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid var(--brand-gris);
+        }
+
+        .btn-brand:hover {
+            background-color: transparent;
+            color: var(--brand-gris);
+        }
+
+        .nav-link {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--brand-gris);
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-dorado);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 bg-[#F2EFE9]/90 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="LOGO.jpg" alt="Viminza" class="h-10">
+            </div>
+            <div class="hidden md:flex gap-10">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Especialidades</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero px-6">
+        <img src="LOGO.jpg" alt="Viminza Estudio Jurídico" class="logo-main animate__animated animate__fadeIn">
+        <div class="max-w-2xl">
+            <p class="brand-font italic text-xl md:text-2xl text-gray-600 mb-8">
+                "Un nuevo concepto en asesoramiento legal"
+            </p>
+            <a href="#contacto" class="btn-brand">Iniciar Consulta</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-3xl md:text-4xl mb-4">Áreas de Especialización</h2>
+                <div class="gold-line"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card text-center">
+                    <i class="fas fa-users text-2xl mb-6 opacity-60"></i>
+                    <h3 class="brand-font text-xl mb-4">FAMILIA</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">Divorcios, cuidado personal, alimentos y régimen de comunicación.</p>
+                </div>
+
+                <div class="service-card text-center">
+                    <i class="fas fa-balance-scale text-2xl mb-6 opacity-60"></i>
+                    <h3 class="brand-font text-xl mb-4">CIVIL</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">Sucesiones, daños y perjuicios, accidentes e incumplimientos.</p>
+                </div>
+
+                <div class="service-card text-center">
+                    <i class="fas fa-briefcase text-2xl mb-6 opacity-60"></i>
+                    <h3 class="brand-font text-xl mb-4">LABORAL</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">Despidos, reclamos ART, renuncias y redacción de telegramas.</p>
+                </div>
+
+                <div class="service-card text-center">
+                    <i class="fas fa-shopping-cart text-2xl mb-6 opacity-60"></i>
+                    <h3 class="brand-font text-xl mb-4">CONSUMIDOR</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed italic">Representación frente a abusos comerciales y asesoramiento preventivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-[#F2EFE9]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div>
+                    <h2 class="brand-font text-4xl mb-6">Excelencia & Compromiso</h2>
+                    <p class="text-gray-500 mb-10 leading-relaxed italic">
+                        Brindamos soluciones legales a medida con un enfoque humano y profesional. 
+                        También realizamos gestiones judiciales, multas de tránsito y trámites registrales.
+                    </p>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-4">
+                            <i class="fab fa-whatsapp text-xl text-[#A69166]"></i>
+                            <span class="text-xs font-bold tracking-widest">11 5750-1565</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="far fa-envelope text-xl text-[#A69166]"></i>
+                            <span class="text-xs font-bold tracking-widest">viminzaestudio@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 shadow-sm border border-gray-100">
+                    <form class="space-y-6">
+                        <input type="text" placeholder="NOMBRE" class="w-full border-b border-gray-200 py-3 outline-none focus:border-[#A69166] text-[10px] tracking-widest bg-transparent">
+                        <input type="email" placeholder="EMAIL" class="w-full border-b border-gray-200 py-3 outline-none focus:border-[#A69166] text-[10px] tracking-widest bg-transparent">
+                        <textarea placeholder="MENSAJE" rows="4" class="w-full border-b border-gray-200 py-3 outline-none focus:border-[#A69166] text-[10px] tracking-widest bg-transparent"></textarea>
+                        <button class="w-full btn-brand py-5">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-gray-200">
+        <img src="LOGO.jpg" alt="Viminza" class="h-8 mx-auto mb-6 opacity-50">
+        <p class="text-[8px] text-gray-400 tracking-[0.5em] font-bold uppercase">&copy; 2026 VIMINZA · BUENOS AIRES</p>
+    </footer>
+
+</body>
+</html>
