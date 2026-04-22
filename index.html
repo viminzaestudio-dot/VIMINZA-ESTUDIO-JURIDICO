@@ -12,7 +12,7 @@
     <style>
         :root {
             --gold: #C5A059;
-            --nude: #F9F7F2;
+            --nude: #F9F7F2; /* Color Nude */
             --dark: #1a1a1a;
         }
         body {
@@ -26,18 +26,25 @@
             letter-spacing: 0.1em;
         }
         
-        /* Ajuste de Navegación y Logo */
+        /* Ajuste de Navegación - Solo color de texto modificado a Nude */
         .nav-link {
             font-size: 10px;
             font-weight: 600;
             letter-spacing: 0.25em;
             transition: color 0.3s ease;
-            color: #444;
+            color: var(--nude); /* Texto en color Nude */
         }
-        .nav-link:hover { color: var(--gold); }
+        .nav-link:hover { 
+            color: var(--gold); 
+        }
+
+        /* Contenedor de la nav para que el texto nude sea visible (le di un fondo oscuro sutil al hover del nav o puedes dejarlo sobre el blanco actual) */
+        nav {
+            background-color: rgba(255, 255, 255, 0.98);
+        }
 
         .logo-header {
-            height: 55px; /* Altura perfecta para que luzca sin deformarse */
+            height: 55px;
             width: auto;
             object-fit: contain;
         }
@@ -88,7 +95,7 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-gray-100">
+    <nav class="fixed w-full z-50 border-b border-gray-100 backdrop-blur-md">
         <div class="container mx-auto px-6 py-2 flex justify-between items-center">
             
             <div class="flex items-center gap-4">
@@ -99,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="hidden md:flex gap-10">
+            <div class="hidden md:flex gap-10 bg-black/80 px-6 py-2 rounded-full">
                 <a href="#inicio" class="nav-link">INICIO</a>
                 <a href="#servicios" class="nav-link">SERVICIOS</a>
                 <a href="#consultas" class="nav-link">CONTACTO</a>
