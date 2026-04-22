@@ -13,6 +13,7 @@
         :root {
             --gold: #C5A059;
             --nude: #F9F7F2;
+            --soft-gold: #E8E1D1;
         }
         body {
             font-family: 'Montserrat', sans-serif;
@@ -22,25 +23,18 @@
         }
         .brand-font {
             font-family: 'Playfair Display', serif;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
         }
         
-        /* Ajuste del Logo */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 8px 0;
-        }
-        .logo-img {
-            height: 75px; 
+        /* Ajuste del Logo para que no se deforme */
+        .logo-nav {
+            height: 50px; /* Tamaño controlado */
             width: auto;
             object-fit: contain;
-            filter: contrast(1.05);
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
@@ -51,131 +45,151 @@
             justify-content: center;
         }
 
-        .social-link {
+        /* Estilo de las tarjetas de servicio según la imagen */
+        .service-row {
+            background-color: #E8E1D1; /* Color crema de la imagen */
+            border-radius: 50px;
+            padding: 25px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
             transition: all 0.3s ease;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        .social-link:hover {
-            color: var(--gold);
-            transform: translateY(-2px);
+        .service-row:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-icon img, .service-icon i {
+            font-size: 45px;
+            color: #555;
         }
 
-        .service-card {
-            background: white;
-            transition: all 0.4s ease;
-            border: 1px solid transparent;
-        }
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        }
+        .social-link:hover { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-gray-100">
-        <div class="container mx-auto px-4 md:px-6 py-1 flex justify-between items-center">
-            
-            <div class="logo-container">
-                <img src="logo.jpg" alt="Viminza Logo" class="logo-img">
-                <div class="leading-tight">
-                    <h1 class="brand-font font-bold text-xl md:text-2xl uppercase tracking-widest m-0">Viminza</h1>
-                    <p class="hidden sm:block text-[9px] text-[#C5A059] tracking-[0.15em] uppercase font-bold m-0 italic">Un nuevo concepto en asesoramiento legal</p>
-                </div>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.jpg" alt="Viminza" class="logo-nav">
+                <span class="brand-font font-bold text-xl tracking-widest">VIMINZA</span>
             </div>
 
-            <div class="flex items-center gap-4 md:gap-8">
-                <div class="hidden md:flex gap-5 text-gray-700">
-                    <a href="https://www.instagram.com/viminzaestudio" target="_blank" class="social-link text-lg"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/viminza-estudio-juridico/" target="_blank" class="social-link text-lg"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/541157501565" target="_blank" class="social-link text-lg"><i class="fab fa-whatsapp"></i></a>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex gap-4">
+                    <a href="https://www.instagram.com/viminzaestudio" target="_blank" class="text-lg social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/viminza-estudio-juridico/" target="_blank" class="text-lg social-link"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <a href="#consultas" class="bg-black text-white px-6 py-3 text-[10px] font-bold tracking-widest hover:bg-[#C5A059] transition duration-300 shadow-md">CONTACTO</a>
+                <a href="#consultas" class="bg-black text-white px-5 py-2 text-[10px] font-bold tracking-widest hover:bg-[#C5A059] transition">CONTACTO</a>
             </div>
         </div>
     </nav>
 
     <section class="hero text-white text-center px-4">
         <div class="max-w-4xl">
-            <h2 class="brand-font text-6xl md:text-9xl mb-4 font-bold tracking-tight">Viminza</h2>
-            <div class="w-32 h-[1px] bg-[#C5A059] mx-auto mb-8"></div>
-            <p class="text-lg md:text-2xl italic font-light tracking-[0.25em] uppercase opacity-90 px-4 py-2 border border-white/20 inline-block">
+            <h1 class="brand-font text-7xl md:text-9xl mb-4 font-bold">Viminza</h1>
+            <p class="text-xl md:text-3xl italic font-light tracking-[0.2em] uppercase text-gray-200">
                 Un nuevo concepto en asesoramiento legal
             </p>
         </div>
     </section>
 
-    <section id="servicios" class="py-32 container mx-auto px-6">
-        <div class="text-center mb-20">
-            <p class="text-[#C5A059] font-bold tracking-[0.4em] text-[10px] uppercase mb-3">Servicios Profesionales</p>
-            <h2 class="brand-font text-5xl">Especialidades</h2>
+    <section id="servicios" class="py-24 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="brand-font text-5xl uppercase text-gray-800">¿Cómo podemos ayudarte?</h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="service-card p-12 text-center rounded-sm shadow-sm">
-                <i class="fas fa-users text-[#C5A059] text-3xl mb-8"></i>
-                <h3 class="brand-font font-bold text-lg mb-4 tracking-widest">FAMILIA</h3>
-                <p class="text-xs text-gray-500 italic leading-relaxed">Divorcios, cuidado personal, alimentos y régimen de comunicación.</p>
+        <div class="space-y-6">
+            <div class="service-row">
+                <div class="service-icon"><i class="fas fa-users-items"><img src="https://cdn-icons-png.flaticon.com/512/2916/2916315.png" style="width:60px; opacity:0.7"></i></div>
+                <div>
+                    <h3 class="brand-font font-bold text-2xl">FAMILIA</h3>
+                    <p class="text-gray-600 text-lg">Divorcios, cuidado personal, alimentos y régimen de comunicación.</p>
+                </div>
             </div>
-            <div class="service-card p-12 text-center rounded-sm shadow-sm">
-                <i class="fas fa-balance-scale text-[#C5A059] text-3xl mb-8"></i>
-                <h3 class="brand-font font-bold text-lg mb-4 tracking-widest">CIVIL</h3>
-                <p class="text-xs text-gray-500 italic leading-relaxed">Sucesiones, daños y perjuicios, accidentes y responsabilidad civil.</p>
+
+            <div class="service-row">
+                <div class="service-icon"><img src="https://cdn-icons-png.flaticon.com/512/4252/4252331.png" style="width:60px; opacity:0.7"></div>
+                <div>
+                    <h3 class="brand-font font-bold text-2xl">CIVIL</h3>
+                    <p class="text-gray-600 text-lg">Sucesiones, daños y perjuicios: Accidentes de tránsito, incumplimientos contractuales.</p>
+                </div>
             </div>
-            <div class="service-card p-12 text-center rounded-sm shadow-sm">
-                <i class="fas fa-briefcase text-[#C5A059] text-3xl mb-8"></i>
-                <h3 class="brand-font font-bold text-lg mb-4 tracking-widest">LABORAL</h3>
-                <p class="text-xs text-gray-500 italic leading-relaxed">Despidos, reclamos ART, redacción de telegramas y conciliaciones.</p>
+
+            <div class="service-row">
+                <div class="service-icon"><img src="https://cdn-icons-png.flaticon.com/512/2891/2891415.png" style="width:60px; opacity:0.7"></div>
+                <div>
+                    <h3 class="brand-font font-bold text-2xl">LABORAL</h3>
+                    <p class="text-gray-600 text-lg">Asesoramiento en despidos y renuncias, reclamos ART y redacción de telegramas.</p>
+                </div>
+            </div>
+
+            <div class="service-row">
+                <div class="service-icon"><img src="https://cdn-icons-png.flaticon.com/512/3081/3081986.png" style="width:60px; opacity:0.7"></div>
+                <div>
+                    <h3 class="brand-font font-bold text-2xl">CONSUMIDOR</h3>
+                    <p class="text-gray-600 text-lg">Representación de consumidores y usuarios, asesoramiento a empresas/proveedores.</p>
+                </div>
+            </div>
+
+            <div class="service-row">
+                <div class="service-icon"><img src="https://cdn-icons-png.flaticon.com/512/3503/3503827.png" style="width:60px; opacity:0.7"></div>
+                <div>
+                    <h3 class="brand-font font-bold text-2xl">OTROS SERVICIOS</h3>
+                    <p class="text-gray-600 text-lg">Cartas documento: Confección y revisión. Gestiones judiciales y trámites registrales. Gestión de multas de tránsito.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="consultas" class="py-32 bg-white">
+    <section id="consultas" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-20">
+            <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="brand-font text-6xl mb-10 tracking-tighter">Hablemos.</h2>
-                    <p class="text-gray-500 mb-12 italic leading-loose text-lg">Nuestro estudio se compromete a brindar una solución integral y personalizada para cada conflicto legal.</p>
-                    
+                    <h2 class="brand-font text-6xl mb-10">Contacto.</h2>
                     <div class="space-y-6">
                         <a href="https://wa.me/541157501565" target="_blank" class="flex items-center group">
-                            <div class="w-12 h-12 bg-[#F9F7F2] flex items-center justify-center text-[#C5A059] rounded-full mr-5 group-hover:bg-[#C5A059] group-hover:text-white transition-all"><i class="fab fa-whatsapp text-xl"></i></div>
-                            <span class="text-[11px] font-bold tracking-widest uppercase">11 5750-1565</span>
+                            <div class="w-12 h-12 bg-[#F9F7F2] flex items-center justify-center text-[#C5A059] rounded-full mr-5 group-hover:bg-[#25d366] group-hover:text-white transition-all"><i class="fab fa-whatsapp text-xl"></i></div>
+                            <span class="font-bold tracking-widest uppercase">11 5750-1565</span>
                         </a>
                         <a href="https://www.linkedin.com/company/viminza-estudio-juridico/" target="_blank" class="flex items-center group">
                             <div class="w-12 h-12 bg-[#F9F7F2] flex items-center justify-center text-[#C5A059] rounded-full mr-5 group-hover:bg-[#0077b5] group-hover:text-white transition-all"><i class="fab fa-linkedin-in text-xl"></i></div>
-                            <span class="text-[11px] font-bold tracking-widest uppercase">LinkedIn / Viminza</span>
+                            <span class="font-bold tracking-widest uppercase">LinkedIn</span>
                         </a>
                         <a href="https://www.instagram.com/viminzaestudio" target="_blank" class="flex items-center group">
                             <div class="w-12 h-12 bg-[#F9F7F2] flex items-center justify-center text-[#C5A059] rounded-full mr-5 group-hover:bg-[#E1306C] group-hover:text-white transition-all"><i class="fab fa-instagram text-xl"></i></div>
-                            <span class="text-[11px] font-bold tracking-widest uppercase">@viminzaestudio</span>
+                            <span class="font-bold tracking-widest uppercase">@viminzaestudio</span>
                         </a>
                     </div>
                 </div>
                 
-                <div class="bg-[#F9F7F2] p-10 md:p-14 rounded-sm shadow-sm border border-gray-100">
-                    <form class="space-y-8">
-                        <input type="text" placeholder="NOMBRE COMPLETO" class="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-[#C5A059] text-[10px] tracking-widest uppercase transition">
-                        <input type="email" placeholder="EMAIL" class="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-[#C5A059] text-[10px] tracking-widest uppercase transition">
-                        <textarea placeholder="MENSAJE" rows="3" class="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-[#C5A059] text-[10px] tracking-widest uppercase transition"></textarea>
-                        <button class="w-full bg-black text-white py-5 text-[10px] font-bold tracking-[0.4em] hover:bg-[#C5A059] transition duration-500 shadow-xl">ENVIAR CONSULTA</button>
+                <div class="bg-[#F9F7F2] p-10 border border-gray-100">
+                    <form class="space-y-6">
+                        <input type="text" placeholder="NOMBRE COMPLETO" class="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-[#C5A059] text-[10px] tracking-widest">
+                        <textarea placeholder="MENSAJE" rows="3" class="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-[#C5A059] text-[10px] tracking-widest"></textarea>
+                        <button class="w-full bg-black text-white py-4 text-[10px] font-bold tracking-[0.3em] hover:bg-[#C5A059] transition">ENVIAR CONSULTA</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center bg-white border-t border-gray-50">
-        <img src="logo.jpg" alt="Viminza" class="h-20 mx-auto mb-8 opacity-70">
-        <div class="flex justify-center gap-8 mb-10">
-            <a href="https://www.instagram.com/viminzaestudio" target="_blank" class="text-gray-400 hover:text-[#E1306C] transition text-2xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/viminza-estudio-juridico/" target="_blank" class="text-gray-400 hover:text-[#0077b5] transition text-2xl"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/541157501565" target="_blank" class="text-gray-400 hover:text-[#25d366] transition text-2xl"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="text-[10px] text-gray-400 tracking-[0.6em] font-bold uppercase">&copy; 2026 VIMINZA &middot; ESTUDIO JURÍDICO &middot; BUENOS AIRES</p>
+    <footer class="py-12 text-center bg-white border-t border-gray-100">
+        <p class="text-[10px] text-gray-400 tracking-[0.5em] font-bold uppercase">&copy; 2026 VIMINZA &middot; BUENOS AIRES</p>
     </footer>
 
-    <a href="https://wa.me/541157501565" target="_blank" style="position:fixed; bottom:30px; right:30px; background:#25d366; color:white; width:65px; height:65px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; z-index:1000; box-shadow: 0 6px 16px rgba(0,0,0,0.2);">
+    <a href="https://wa.me/541157501565" target="_blank" style="position:fixed; bottom:30px; right:30px; background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; z-index:1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
         <i class="fab fa-whatsapp"></i>
     </a>
 
