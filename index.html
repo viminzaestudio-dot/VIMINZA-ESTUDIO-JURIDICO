@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viminza | Estudio Jurídico</title>
     
-    <meta name="description" content="Viminza Estudio Jurídico - Un nuevo concepto en asesoramiento legal. Especialistas en Derecho de Familia, Civil, Laboral y Defensa del Consumidor en Buenos Aires.">
-    <meta name="keywords" content="abogados, estudio juridico, familia, divorcios, sucesiones, despidos, accidentes de transito, multas, viminza">
+    <meta name="description" content="Viminza Estudio Jurídico - Asesoramiento legal profesional.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -14,187 +13,132 @@
     
     <style>
         :root {
-            --nude-light: #F9F7F2;
             --gold: #C5A059;
-            --dark-gray: #1a1a1a;
+            --nude: #F9F7F2;
         }
         body {
             font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-            background-color: var(--nude-light);
-            color: var(--dark-gray);
+            background-color: var(--nude);
+            color: #1a1a1a;
+            margin: 0;
         }
-        
         .brand-font {
             font-family: 'Playfair Display', serif;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
-
-        /* Hero con efecto Parallax */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+        /* Hero con efecto de fondo fijo (Parallax) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
+        /* Ajuste fino del Logo */
+        .logo-img {
+            max-height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
         .service-card {
-            background: #ffffff;
-            transition: all 0.4s ease;
+            background: white;
             border: 1px solid rgba(197, 160, 89, 0.1);
-            height: 100%;
+            transition: transform 0.3s ease;
         }
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: var(--gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-
-        /* Ajuste de Logo para GitHub */
-        .nav-logo {
-            max-height: 60px;
-            width: auto;
-            display: block !important;
-        }
-
-        input, textarea {
-            background: transparent !important;
-            border-bottom: 1px solid #d1d1d1 !important;
-            transition: border-color 0.3s;
-        }
-        input:focus, textarea:focus {
-            border-color: var(--gold) !important;
-            outline: none;
         }
     </style>
 </head>
 <body>
 
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="./logo.png.jpg" alt="Viminza Logo" class="nav-logo" onerror="console.log('Error cargando logo')">
-                <div class="flex flex-col">
-                    <span class="brand-font text-lg font-bold leading-none">VIMINZA</span>
-                    <span class="text-[8px] tracking-[0.3em] text-[#C5A059] font-semibold uppercase">Estudio Jurídico</span>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.png.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+                <div class="leading-none">
+                    <p class="brand-font font-bold text-xl uppercase tracking-tighter">Viminza</p>
+                    <p class="text-[8px] text-gold tracking-[0.3em] uppercase font-semibold">Estudio Jurídico</p>
                 </div>
             </div>
-            
-            <nav class="hidden md:flex space-x-10 font-bold text-[10px] tracking-[0.3em]">
-                <a href="#inicio" class="hover:text-[#C5A059] transition">INICIO</a>
-                <a href="#servicios" class="hover:text-[#C5A059] transition">SERVICIOS</a>
-                <a href="#consultas" class="bg-[#1a1a1a] text-white px-6 py-2 hover:bg-[#C5A059] transition duration-300">CONSULTAS</a>
-            </nav>
+            <div class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest">
+                <a href="#inicio" class="hover:text-gold transition">INICIO</a>
+                <a href="#servicios" class="hover:text-gold transition">SERVICIOS</a>
+                <a href="#consultas" class="bg-black text-white px-5 py-2 hover:bg-gold transition">CONSULTAS</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="inicio" class="hero-section h-screen flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-4xl">
-            <h1 class="brand-font text-6xl md:text-8xl mb-6 font-bold tracking-[0.1em]">Viminza</h1>
-            <p class="text-lg md:text-xl font-light italic tracking-wide text-gray-200 border-y border-white/20 py-4 px-10 inline-block">
+    <section id="inicio" class="hero text-white text-center px-4">
+        <div class="max-w-3xl">
+            <h1 class="brand-font text-6xl md:text-8xl mb-4 font-bold">Viminza</h1>
+            <p class="text-lg md:text-xl italic font-light tracking-wide border-y border-white/20 py-4 inline-block">
                 "Un nuevo concepto en asesoramiento legal"
             </p>
-            <div class="mt-12">
-                <a href="#consultas" class="border border-white px-10 py-4 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-white hover:text-black transition-all">
-                    Iniciar Consulta
-                </a>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="brand-font text-3xl mb-2">Especialidades</h2>
+            <div class="w-16 h-1 bg-gold mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="service-card p-8 text-center">
+                <i class="fas fa-users text-gold text-2xl mb-4"></i>
+                <h3 class="brand-font font-bold mb-2">FAMILIA</h3>
+                <p class="text-xs text-gray-500 italic">Divorcios, cuidado personal, alimentos y régimen de comunicación.</p>
+            </div>
+            <div class="service-card p-8 text-center">
+                <i class="fas fa-balance-scale text-gold text-2xl mb-4"></i>
+                <h3 class="brand-font font-bold mb-2">CIVIL</h3>
+                <p class="text-xs text-gray-500 italic">Sucesiones, accidentes de tránsito e incumplimientos contractuales.</p>
+            </div>
+            <div class="service-card p-8 text-center">
+                <i class="fas fa-briefcase text-gold text-2xl mb-4"></i>
+                <h3 class="brand-font font-bold mb-2">LABORAL</h3>
+                <p class="text-xs text-gray-500 italic">Despidos, renuncias, reclamos ART y redacción de telegramas.</p>
+            </div>
+            <div class="service-card p-8 text-center">
+                <i class="fas fa-shopping-cart text-gold text-2xl mb-4"></i>
+                <h3 class="brand-font font-bold mb-2">CONSUMIDOR</h3>
+                <p class="text-xs text-gray-500 italic">Defensa de usuarios y asesoramiento preventivo a empresas.</p>
+            </div>
+            <div class="service-card p-8 text-center lg:col-span-2">
+                <i class="fas fa-file-signature text-gold text-2xl mb-4"></i>
+                <h3 class="brand-font font-bold mb-2">OTROS SERVICIOS</h3>
+                <p class="text-xs text-gray-500 italic">Cartas documento, gestiones judiciales, trámites registrales y multas de tránsito.</p>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="brand-font text-3xl mb-4 italic tracking-widest">Nuestras Especialidades</h2>
-                <div class="w-20 h-[1px] bg-[#C5A059] mx-auto"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card p-8 bg-[#F9F7F2]">
-                    <div class="text-[#C5A059] text-2xl mb-4"><i class="fas fa-users"></i></div>
-                    <h3 class="brand-font text-lg mb-3 font-bold">FAMILIA</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed italic">Divorcios, cuidado personal, alimentos y régimen de comunicación.</p>
-                </div>
-
-                <div class="service-card p-8 bg-[#F9F7F2]">
-                    <div class="text-[#C5A059] text-2xl mb-4"><i class="fas fa-balance-scale"></i></div>
-                    <h3 class="brand-font text-lg mb-3 font-bold">CIVIL</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed italic">Sucesiones, daños y perjuicios: Accidentes de tránsito, incumplimientos contractuales.</p>
-                </div>
-
-                <div class="service-card p-8 bg-[#F9F7F2]">
-                    <div class="text-[#C5A059] text-2xl mb-4"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="brand-font text-lg mb-3 font-bold">LABORAL</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed italic">Asesoramiento en despidos y renuncias, reclamos ART y redacción de telegramas.</p>
-                </div>
-
-                <div class="service-card p-8 bg-[#F9F7F2]">
-                    <div class="text-[#C5A059] text-2xl mb-4"><i class="fas fa-shopping-cart"></i></div>
-                    <h3 class="brand-font text-lg mb-3 font-bold">CONSUMIDOR</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed italic">Representación de consumidores y usuarios, asesoramiento a empresas/proveedores.</p>
-                </div>
-
-                <div class="service-card p-8 bg-[#F9F7F2] lg:col-span-2">
-                    <div class="text-[#C5A059] text-2xl mb-4"><i class="fas fa-file-invoice"></i></div>
-                    <h3 class="brand-font text-lg mb-3 font-bold">OTROS SERVICIOS</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed italic">Cartas documento: Confección y revisión. Gestiones judiciales y trámites registrales. Gestión de multas de tránsito.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="consultas" class="py-24 bg-[#F9F7F2]">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid lg:grid-cols-2 gap-20">
+    <section id="consultas" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="brand-font text-4xl mb-8 tracking-tighter">Hablemos.</h2>
-                    <p class="text-gray-500 mb-12 font-light leading-loose italic">Brindamos una respuesta rápida y profesional a cada consulta legal.</p>
-                    <div class="space-y-8">
-                        <a href="https://wa.me/541157501565" target="_blank" class="flex items-center group">
-                            <div class="w-12 h-12 bg-white flex items-center justify-center text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition rounded-full mr-4 shadow-sm"><i class="fab fa-whatsapp"></i></div>
-                            <span class="text-xs tracking-widest font-bold uppercase">11 5750-1565</span>
-                        </a>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-white flex items-center justify-center text-[#C5A059] rounded-full mr-4 shadow-sm"><i class="far fa-envelope"></i></div>
-                            <span class="text-xs tracking-widest font-bold uppercase">viminzaestudio@gmail.com</span>
-                        </div>
-                        <div class="flex space-x-6 pt-4">
-                            <a href="https://instagram.com/viminzaestudio" target="_blank" class="text-gray-400 hover:text-[#C5A059] text-xl transition"><i class="fab fa-instagram"></i></a>
-                        </div>
+                    <h2 class="brand-font text-4xl mb-6">Hablemos.</h2>
+                    <p class="text-sm text-gray-500 mb-8 italic">Atención personalizada y rápida.</p>
+                    <div class="space-y-4 text-xs font-bold tracking-widest uppercase">
+                        <p><i class="fab fa-whatsapp text-gold mr-2"></i> 11 5750-1565</p>
+                        <p><i class="far fa-envelope text-gold mr-2"></i> viminzaestudio@gmail.com</p>
                     </div>
                 </div>
-
-                <div class="bg-white p-10 shadow-sm">
-                    <form action="#" class="space-y-8">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="flex flex-col">
-                                <label class="text-[9px] tracking-[0.3em] font-bold text-gray-400 mb-2 uppercase">Nombre</label>
-                                <input type="text" class="py-2 text-sm" required>
-                            </div>
-                            <div class="flex flex-col">
-                                <label class="text-[9px] tracking-[0.3em] font-bold text-gray-400 mb-2 uppercase">Email</label>
-                                <input type="email" class="py-2 text-sm" required>
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="text-[9px] tracking-[0.3em] font-bold text-gray-400 mb-2 uppercase">Mensaje</label>
-                            <textarea rows="4" class="py-2 text-sm" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-[#1a1a1a] text-white py-4 font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-[#C5A059] transition duration-500">
-                            Enviar Consulta
-                        </button>
-                    </form>
-                </div>
+                <form class="space-y-6">
+                    <input type="text" placeholder="NOMBRE" class="w-full border-b border-gray-200 py-3 outline-none focus:border-gold text-[10px] tracking-widest">
+                    <textarea placeholder="MENSAJE" rows="3" class="w-full border-b border-gray-200 py-3 outline-none focus:border-gold text-[10px] tracking-widest"></textarea>
+                    <button class="w-full bg-black text-white py-4 text-[10px] font-bold tracking-[0.3em] hover:bg-gold transition">ENVIAR</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-white text-center border-t border-gray-100">
-        <img src="./logo.png.jpg" alt="Viminza" class="h-8 mx-auto mb-4 opacity-50">
-        <p class="brand-font text-xl mb-4 tracking-[0.3em]">Viminza</p>
-        <p class="text-[9px] text-gray-400 uppercase tracking-[0.5em] font-bold">&copy; 2026 Estudio Jurídico · Buenos Aires</p>
+    <footer class="py-10 text-center border-t border-gray-100">
+        <p class="text-[8px] text-gray-400 tracking-[0.5em] font-bold uppercase">&copy; 2026 VIMINZA · BUENOS AIRES</p>
     </footer>
 
 </body>
